@@ -1,5 +1,6 @@
 {
   "development": {
+    "use_env_variable": "DB_URI",
     "username": "waiyaki",
     "password": null,
     "database": "todos-dev",
