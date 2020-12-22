@@ -1,15 +1,19 @@
 module.exports = {
   up: (queryInterface, Sequelize) =>
-    queryInterface.createTable('TodoItems', {
+    queryInterface.createTable('Tasks', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
       },
-      content: {
+      title: {
         type: Sequelize.STRING,
         allowNull: false,
+      },
+      description: {
+        type: Sequelize.STRING,
+        allowNull: true,
       },
       complete: {
         type: Sequelize.BOOLEAN,
@@ -23,16 +27,25 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      todoId: {
-        type: Sequelize.INTEGER,
+      projectId: {
+        type: Sequelize.UUID,
         onDelete: 'CASCADE',
         references: {
-          model: 'Todos',
+          model: 'Projects',
           key: 'id',
-          as: 'todoId',
+          as: 'projectId',
+        },
+      },
+      userId: {
+        type: Sequelize.UUID,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Users',
+          key: 'id',
+          as: 'userId',
         },
       },
     }),
   down: (queryInterface /* , Sequelize */) =>
-    queryInterface.dropTable('TodoItems'),
+    queryInterface.dropTable('Tasks'),
 };
