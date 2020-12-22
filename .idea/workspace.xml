@@ -2,20 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69808fc0-490c-4a2c-8fdf-4d7012857630" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/models/comment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/organization.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/project.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/task.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/20160717103305-create-todo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/20160717104733-create-todo-item.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/todoitem.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/todoitem.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1m1pxb5FS5Uc8HrC6DNuzTUcjmv" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,12 +58,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608671198856</updated>
-      <workItem from="1608671200215" duration="2104000" />
+      <workItem from="1608671200215" duration="2504000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
