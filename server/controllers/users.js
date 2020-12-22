@@ -1,6 +1,7 @@
 const Organization = require('../models').Organization;
 const User = require('../models').User;
 const bcrypt = require('bcrypt');
+const jwt = require('../helper/jwt');
 
 module.exports = {
   create(req, res) {
@@ -14,7 +15,15 @@ module.exports = {
             password: hash,
             organizationId: org.id,
           })
-          .then((user) => res.status(201).send(user))
+          .then((user) => {
+            let u = {
+              id: user.id,
+              name: user.name,
+              email: user.email,
+            };
+            u.token = jwt.generateToken(u);
+            res.status(201).send(u);
+          })
           .catch((error) => res.status(400).send(error));
         });
       })
