@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    image: hasan/node-postgres/1
+    restart: "no"
+    environment:
+      DB_URI: "host=postgresql user=postgres password=password dbname=hasan-backend-1 port=5432 sslmode=disable"
+      CACHE_URI: "redis://redis:6379/0"
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgresql
+
+  postgresql:
+    build:
+      context: .
+      dockerfile: pg-Dockerfile
+    restart: "no"
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: hasan-node-postgres-1
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgresdb:/var/lib/postgresql/data/
+
+volumes:
+  postgresdb:
