@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69808fc0-490c-4a2c-8fdf-4d7012857630" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/models/comment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/organization.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/project.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/task.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/controllers/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/todoitem.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/todoitem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/20160717100733-create-organization.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/migrations/20160717100733-create-organization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/20160717101733-create-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/migrations/20160717101733-create-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/20160717102733-create-project.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/migrations/20160717102733-create-project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/20160717103733-create-task.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/migrations/20160717103733-create-task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/20160717104305-create-comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/migrations/20160717104305-create-comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608671198856</updated>
-      <workItem from="1608671200215" duration="2504000" />
+      <workItem from="1608671200215" duration="3788000" />
     </task>
     <servers />
   </component>
