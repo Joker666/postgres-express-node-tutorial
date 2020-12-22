@@ -16,7 +16,7 @@ module.exports = {
             organizationId: org.id,
           })
           .then((user) => {
-            let u = {
+            const u = {
               id: user.id,
               name: user.name,
               email: user.email,
