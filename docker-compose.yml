@@ -6,8 +6,7 @@ services:
     image: hasan/node-postgres/1
     restart: "no"
     environment:
-      DB_URI: "host=postgresql user=postgres password=password dbname=hasan-backend-1 port=5432 sslmode=disable"
-      CACHE_URI: "redis://redis:6379/0"
+      DB_URI: "postgres://postgres:password@postgresql:5432/hasan-node-postgres-1"
     ports:
       - 8000:8000
     depends_on:
