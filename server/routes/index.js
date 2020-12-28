@@ -16,7 +16,7 @@ module.exports = (router) => {
   router.post('/api/projects/create', auth.verify, projectsController.create);
   router.post('/api/projects/:projectId/tasks/create', auth.verify, tasksController.create);
   // app.post('/api/todos', todosController.create);
-  // app.get('/api/todos', todosController.list);
+  router.get('/api/tasks/list', auth.verify, tasksController.list);
   // app.get('/api/todos/:todoId', todosController.retrieve);
   // app.put('/api/todos/:todoId', todosController.update);
   // app.delete('/api/todos/:todoId', todosController.destroy);
