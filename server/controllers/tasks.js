@@ -2,8 +2,10 @@ const User = require('../models').User;
 const Project = require('../models').Project;
 const Task = require('../models').Task;
 
+const { UnauthenticatedError, NotFoundError, Data } = require('../errors/apiErrors');
+
 module.exports = {
-  create(req, res) {
+  create(req, res, next) {
     return User.findById(req.user.id).then(user => {
       if (user) {
         Project.findById(req.params.projectId).then(project => {
@@ -24,17 +26,17 @@ module.exports = {
                   Task.create(t).then((task) => res.status(201).send(task))
                   .catch((error) => res.status(400).send(error));
                 } else {
-                  throw new Error('User does not exist');
+                  throw new NotFoundError('User does not exist');
                 }
-              }).catch((error) => res.status(400).send(error));
+              }).catch(next);
             }
           } else {
-            throw new Error('Project does not exist');
+            throw new NotFoundError('Project does not exist');
           }
-        }).catch((error) => res.status(400).send(error));
+        }).catch(next);
       } else {
-        throw new Error('Unauthenticated');
+        throw new UnauthenticatedError('Unauthenticated');
       }
-    }).catch((error) => res.status(401).send(error));
+    }).catch(next);
   },
 };

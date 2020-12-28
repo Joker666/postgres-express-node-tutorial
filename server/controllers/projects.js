@@ -1,8 +1,10 @@
 const User = require('../models').User;
 const Project = require('../models').Project;
 
+const { UnauthenticatedError } = require('../errors/apiErrors');
+
 module.exports = {
-  create(req, res) {
+  create(req, res, next) {
     return User.findById(req.user.id).then(user => {
       if (user) {
         Project.create({
@@ -12,8 +14,8 @@ module.exports = {
         }).then((project) => res.status(201).send(project))
         .catch((error) => res.status(400).send(error));
       } else {
-        throw new Error('Unauthenticated');
+        throw new UnauthenticatedError('Unauthenticated');
       }
-    }).catch((error) => res.status(401).send(error));
+    }).catch(next);
   },
 };

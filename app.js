@@ -3,6 +3,7 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const db = require('./server/models/index');
+const { UserFacingError } = require('./server/errors/applicationErrors');
 
 const app = express();
 const router = express.Router();
@@ -24,5 +25,16 @@ app.use('/', router);
 app.get('*', (req, res) => res.status(200).send({
   message: 'Welcome to the beginning of nothingness.',
 }));
+
+app.use((err, req, res, next) => {
+  if (err instanceof UserFacingError) {
+    res.status(err.statusCode).json({
+      name: err.name,
+      error: err.message,
+    });
+  } else {
+    res.sendStatus(500);
+  }
+});
 
 module.exports = app;
