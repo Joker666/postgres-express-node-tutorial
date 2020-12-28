@@ -2,6 +2,7 @@ const todosController = require('../controllers').todos;
 const todoItemsController = require('../controllers').todoItems;
 const usersController = require('../controllers').users;
 const projectsController = require('../controllers').projects;
+const tasksController = require('../controllers').tasks;
 
 const auth = require('../middleware/auth');
 
@@ -13,6 +14,7 @@ module.exports = (router) => {
   router.post('/api/users/create', usersController.create);
 
   router.post('/api/projects/create', auth.verify, projectsController.create);
+  router.post('/api/projects/:projectId/tasks/create', auth.verify, tasksController.create);
   // app.post('/api/todos', todosController.create);
   // app.get('/api/todos', todosController.list);
   // app.get('/api/todos/:todoId', todosController.retrieve);
