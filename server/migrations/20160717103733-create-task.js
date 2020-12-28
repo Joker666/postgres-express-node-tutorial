@@ -45,6 +45,16 @@ module.exports = {
           as: 'userId',
         },
       },
+      assignedUserId: {
+        type: Sequelize.UUID,
+        onDelete: 'CASCADE',
+        allowNull: true,
+        references: {
+          model: 'Users',
+          key: 'id',
+          as: 'assignedUserId',
+        },
+      },
     }),
   down: (queryInterface /* , Sequelize */) =>
     queryInterface.dropTable('Tasks'),

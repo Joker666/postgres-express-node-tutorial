@@ -18,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId',
       onDelete: 'CASCADE',
     });
+    Task.belongsTo(models.User, {
+      foreignKey: 'assignedUserId',
+      onDelete: 'CASCADE',
+    });
     Task.belongsTo(models.Project, {
       foreignKey: 'projectId',
       onDelete: 'CASCADE',
